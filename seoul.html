@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首爾回訪 · 私人旅行手冊</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:    #f5f0e6;
+      --paper-lt: #faf6ef;
+      --paper-dk: #d9d0be;
+      --ink:      #1a1714;
+      --ink-fade: #5a4e44;
+      --palace:   #7b1d2b;
+      --terra:    #b84e20;
+      --gold:     #8a6e28;
+      --fog:      #b4ada0;
+
+      --serif:  'Noto Serif TC', serif;
+      --sans:   'Noto Sans TC', sans-serif;
+      --fell:   'IM Fell English', serif;
+      --mono:   'Courier New', Courier, monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ─── COVER ─────────────────────────────── */
+    .cover {
+      background: var(--palace);
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(255,255,255,.025) 18px, rgba(255,255,255,.025) 19px),
+        repeating-linear-gradient(-45deg, transparent, transparent 18px, rgba(255,255,255,.015) 18px, rgba(255,255,255,.015) 19px);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
+      pointer-events: none;
+    }
+
+    /* ── STAMP ── */
+    .stamp {
+      width: 168px;
+      height: 168px;
+      border: 3px solid rgba(245,240,230,.5);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 2.8rem;
+      transform: rotate(-3deg);
+      opacity: .85;
+      z-index: 1;
+    }
+    .stamp::before {
+      content: '';
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(245,240,230,.35);
+      border-radius: 50%;
+    }
+    .stamp__arc {
+      font-family: var(--fell);
+      font-size: .6rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(245,240,230,.7);
+    }
+    .stamp__kanji {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--paper);
+      line-height: 1;
+      margin: .1rem 0;
+    }
+    .stamp__year {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: rgba(245,240,230,.65);
+      letter-spacing: .15em;
+    }
+
+    .cover__title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--paper);
+      text-align: center;
+      line-height: 1.4;
+      z-index: 1;
+    }
+    .cover__sub {
+      font-family: var(--fell);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(245,240,230,.7);
+      text-align: center;
+      margin-top: .6rem;
+      letter-spacing: .05em;
+      z-index: 1;
+    }
+    .cover__dates {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--fell);
+      font-size: 1.05rem;
+      color: rgba(245,240,230,.65);
+      z-index: 1;
+    }
+    .cover__dates::before,
+    .cover__dates::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: rgba(245,240,230,.4);
+    }
+
+    /* ─── PAGE WRAPPER ───────────────────────── */
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ─── SECTION ────────────────────────────── */
+    .section {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--paper-dk);
+    }
+    .section:last-of-type { border-bottom: none; }
+
+    .section__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-family: var(--fell);
+      font-size: .68rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .6rem;
+    }
+    .section__eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--paper-dk);
+    }
+
+    .section__title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1.4rem;
+    }
+
+    /* ─── QUESTION BOX ───────────────────────── */
+    .q-box {
+      background: var(--palace);
+      padding: 2rem;
+      margin-top: .5rem;
+    }
+    .q-box__label {
+      font-family: var(--fell);
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(245,240,230,.6);
+      margin-bottom: .8rem;
+    }
+    .q-box__text {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--paper);
+      line-height: 1.7;
+      min-height: 2.5rem;
+      outline: none;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      padding-bottom: .5rem;
+      cursor: text;
+    }
+    .q-box__text:empty::before {
+      content: attr(data-placeholder);
+      color: rgba(245,240,230,.5);
+    }
+    .q-box__hint {
+      font-family: var(--fell);
+      font-style: italic;
+      font-size: .72rem;
+      color: rgba(245,240,230,.5);
+      margin-top: .6rem;
+    }
+
+    /* ─── INFO GRID ──────────────────────────── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: .8rem;
+    }
+    .info-card {
+      background: var(--paper-lt);
+      border: 1px solid var(--paper-dk);
+      padding: .9rem 1.1rem;
+    }
+    .info-card__label {
+      font-family: var(--fell);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-fade);
+      margin-bottom: .25rem;
+    }
+    .info-card__value {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .info-card__sub {
+      font-family: var(--fell);
+      font-style: italic;
+      font-size: .78rem;
+      color: var(--ink-fade);
+      margin-top: .15rem;
+    }
+
+    /* ─── ALERT ──────────────────────────────── */
+    .alert {
+      border-left: 3px solid var(--terra);
+      background: rgba(184,78,32,.07);
+      padding: .75rem 1rem;
+      margin-bottom: 1.6rem;
+      font-size: .875rem;
+      color: var(--ink);
+    }
+    .alert strong { color: var(--terra); }
+
+    /* ─── MODE BADGE ─────────────────────────── */
+    .mode-badge {
+      display: inline-block;
+      font-family: var(--fell);
+      font-size: .62rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .18rem .55rem;
+      margin-bottom: .5rem;
+      border-radius: 2px;
+    }
+    .mode-solo {
+      background: rgba(123,29,43,.12);
+      color: var(--palace);
+      border: 1px solid rgba(123,29,43,.25);
+    }
+    .mode-friend {
+      background: rgba(138,110,40,.12);
+      color: var(--gold);
+      border: 1px solid rgba(138,110,40,.25);
+    }
+    .mode-arrive {
+      background: rgba(90,78,68,.1);
+      color: var(--ink-fade);
+      border: 1px solid var(--paper-dk);
+    }
+
+    /* ─── DAY BLOCK ──────────────────────────── */
+    .day + .day { margin-top: 2.2rem; }
+
+    .day__header {
+      display: flex;
+      align-items: baseline;
+      gap: .9rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--terra);
+      margin-bottom: .8rem;
+    }
+    .day__numeral {
+      font-family: var(--fell);
+      font-style: italic;
+      font-size: 2.6rem;
+      color: var(--terra);
+      line-height: 1;
+      min-width: 2.8rem;
+    }
+    .day__meta { flex: 1; }
+    .day__date {
+      font-family: var(--fell);
+      font-size: .78rem;
+      color: var(--ink-fade);
+    }
+    .day__name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .day__items { list-style: none; }
+    .day__item {
+      display: flex;
+      gap: 1rem;
+      padding: .55rem 0;
+      border-bottom: 1px dashed var(--paper-dk);
+    }
+    .day__item:last-child { border-bottom: none; }
+    .day__time {
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--gold);
+      min-width: 3.2rem;
+      padding-top: .18rem;
+      flex-shrink: 0;
+    }
+    .day__content { flex: 1; }
+    .day__spot {
+      font-family: var(--serif);
+      font-size: .93rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .day__desc {
+      font-size: .82rem;
+      color: var(--ink-fade);
+      margin-top: .1rem;
+      line-height: 1.6;
+    }
+    .day__note {
+      font-family: var(--fell);
+      font-style: italic;
+      font-size: .78rem;
+      color: var(--terra);
+      margin-top: .2rem;
+    }
+
+    /* ─── TIER LIST ──────────────────────────── */
+    .tier { margin-bottom: 1rem; }
+    .tier__label {
+      font-family: var(--fell);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: .35rem;
+    }
+    .tier__label.a { color: var(--palace); }
+    .tier__label.b { color: var(--gold); }
+    .tier__label.c { color: var(--fog); }
+    .tier__items {
+      font-size: .85rem;
+      color: var(--ink-fade);
+      line-height: 1.7;
+      padding-left: 1rem;
+      border-left: 2px solid var(--paper-dk);
+    }
+    .tier__items strong { color: var(--ink); }
+
+    /* ─── KOREAN NAME TABLE ──────────────────── */
+    .kr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: .6rem;
+      margin-bottom: 1.4rem;
+    }
+    .kr-card {
+      background: var(--paper-lt);
+      border: 1px solid var(--paper-dk);
+      padding: .7rem 1rem;
+    }
+    .kr-card__zh {
+      font-family: var(--fell);
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-fade);
+      margin-bottom: .15rem;
+    }
+    .kr-card__kr {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* ─── CHECKLIST ──────────────────────────── */
+    .checklist {
+      list-style: none;
+      columns: 2;
+      gap: 1rem;
+    }
+    @media (max-width: 480px) { .checklist { columns: 1; } }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      padding: .35rem 0;
+      break-inside: avoid;
+      cursor: pointer;
+    }
+    .check-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: .95rem;
+      height: .95rem;
+      border: 1.5px solid var(--ink-fade);
+      background: transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: .28rem;
+      position: relative;
+      transition: background .15s, border-color .15s;
+    }
+    .check-item input[type="checkbox"]:checked {
+      background: var(--palace);
+      border-color: var(--palace);
+    }
+    .check-item input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      top: -3px;
+      left: 0px;
+      font-size: .72rem;
+      color: var(--paper);
+      font-family: var(--mono);
+    }
+    .check-item.is-checked .check-label {
+      text-decoration: line-through;
+      color: var(--fog);
+    }
+    .check-label {
+      font-size: .88rem;
+      color: var(--ink);
+      line-height: 1.45;
+      transition: color .15s;
+    }
+
+    /* ─── TIPS ───────────────────────────────── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: .8rem;
+    }
+    .tip {
+      background: var(--paper-lt);
+      border: 1px solid var(--paper-dk);
+      padding: 1rem 1.1rem;
+    }
+    .tip__title {
+      font-family: var(--serif);
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--palace);
+      margin-bottom: .3rem;
+    }
+    .tip__body {
+      font-size: .82rem;
+      color: var(--ink-fade);
+      line-height: 1.55;
+    }
+
+    /* ─── BUDGET TABLE ───────────────────────── */
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .88rem;
+      margin-top: .5rem;
+    }
+    .budget-table th {
+      font-family: var(--fell);
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-fade);
+      text-align: left;
+      padding: .5rem .7rem;
+      border-bottom: 2px solid var(--ink);
+    }
+    .budget-table th:last-child { text-align: right; }
+    .budget-table td {
+      padding: .5rem .7rem;
+      border-bottom: 1px dashed var(--paper-dk);
+      color: var(--ink);
+      vertical-align: top;
+    }
+    .budget-table td:last-child {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: .84rem;
+      white-space: nowrap;
+    }
+    .budget-table td:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+    }
+    .budget-table td.budget-note {
+      font-size: .78rem;
+      color: var(--ink-fade);
+      font-family: var(--fell);
+      font-style: italic;
+    }
+    .budget-table tr.budget-total td {
+      border-top: 2px solid var(--ink);
+      border-bottom: none;
+      font-family: var(--serif);
+      font-weight: 700;
+      padding-top: .7rem;
+    }
+    .budget-table tr.budget-total td:last-child {
+      font-family: var(--mono);
+      font-size: .95rem;
+      color: var(--terra);
+    }
+    .budget-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--paper-dk);
+      font-family: var(--mono);
+      font-size: .84rem;
+      color: var(--ink);
+      text-align: right;
+      width: 90px;
+      outline: none;
+      padding: 0 2px;
+    }
+    .budget-input:focus { border-bottom-color: var(--gold); }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    .footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-family: var(--fell);
+      font-style: italic;
+      font-size: .78rem;
+      color: var(--fog);
+      border-top: 1px solid var(--paper-dk);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 600px) {
+      .cover__title { font-size: 1.6rem; }
+      .day__numeral  { font-size: 2rem; }
+      .info-grid, .tips-grid, .kr-grid { grid-template-columns: 1fr; }
+      .page { padding: 0 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="stamp" aria-hidden="true">
+    <span class="stamp__arc">Seoul · Korea</span>
+    <span class="stamp__kanji">서울</span>
+    <span class="stamp__year">2026</span>
+  </div>
+  <h1 class="cover__title">首爾回訪<br>朋友、書店、美術館與慢走</h1>
+  <p class="cover__sub">A Private Return to Seoul · Friends, Books, Art &amp; Slow Walks</p>
+  <div class="cover__dates">7/1 — 7/5 · 回訪首爾</div>
+</section>
+
+<main class="page">
+
+  <!-- 旅行宣言 -->
+  <section class="section">
+    <div class="section__eyebrow">旅行宣言</div>
+    <div class="q-box">
+      <div class="q-box__label">A declaration for this return</div>
+      <p style="font-family:var(--serif);font-size:1.08rem;font-style:italic;color:var(--paper);line-height:1.85;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:.7rem;margin:0;">
+        我已經不是第一次來韓國，也不是第一次走進首爾。這趟不需要補完所有景點，也不需要證明自己很會旅行。我只想用現在的狀態，重新進入這座城市：見一位老朋友，走幾段路，看幾本書，進一間美術館，讓自己慢慢回到身體裡。
+      </p>
+      <p class="q-box__hint" style="margin-top:.7rem">這趟旅行不是為了補完首爾，而是為了用現在的我，重新走進首爾。</p>
+    </div>
+  </section>
+
+  <!-- 本次旅行定位 -->
+  <section class="section">
+    <div class="section__eyebrow">本次旅行定位</div>
+    <h2 class="section__title">這不是第一次，也不是攻略</h2>
+    <p style="font-size:.9rem;color:var(--ink-fade);line-height:1.85;margin-bottom:1.2rem;">
+      我已經不是第一次來韓國，也不是第一次走進首爾。去年曾跟教會去韓國南部，主要搭遊覽車移動；兩年前也曾到過首爾，去過景福宮、MMCA 國立現代美術館、漢江與慶熙大學，也搭過首爾的公車與地鐵。
+    </p>
+    <p style="font-size:.9rem;color:var(--ink-fade);line-height:1.85;">
+      所以這趟旅行不是新手攻略，也不是為了補完所有景點。這次我想用現在的狀態，重新進入這座城市：見一位老朋友，走幾段路，看幾本書，進一間美術館，讓自己慢慢回到身體裡。
+    </p>
+  </section>
+
+  <!-- 帶著的問題 -->
+  <section class="section">
+    <div class="section__eyebrow">此行帶著的問題</div>
+    <div class="q-box">
+      <div class="q-box__label">The question I carry</div>
+      <div
+        class="q-box__text"
+        contenteditable="true"
+        id="question-field"
+        data-placeholder="這趟去首爾，我想帶著什麼問題——跟老朋友聊，跟自己聊，跟首爾聊？"
+      ></div>
+      <p class="q-box__hint">點擊即可編輯，自動儲存於此裝置</p>
+    </div>
+  </section>
+
+  <!-- 出發資訊 -->
+  <section class="section">
+    <div class="section__eyebrow">出發資訊</div>
+    <h2 class="section__title">航班、住宿與網路</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__label">去程航班</div>
+        <div class="info-card__value">TW668</div>
+        <div class="info-card__sub">7/1（三）14:00 TSA → 17:25 GMP<br>德威航空 T'way Air · 票已購妥</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">回程航班</div>
+        <div class="info-card__value">TW667</div>
+        <div class="info-card__sub">7/5（日）11:20 GMP → 13:00 TSA<br>早班機，請勿賴床</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">機場</div>
+        <div class="info-card__value">金浦 GMP</div>
+        <div class="info-card__sub">地鐵 5 號線或 9 號線進市區，約 30 分鐘</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">7/1 住宿</div>
+        <div class="info-card__value">光化門</div>
+        <div class="info-card__sub">1 晚 NT$1,500 · 7/2 上午 11:00 前退房</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">7/2 起住宿</div>
+        <div class="info-card__value">朋友家</div>
+        <div class="info-card__sub">7/2 晚–7/4 晚 · 不用訂房</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">網路</div>
+        <div class="info-card__value">漫遊 5G 已開通</div>
+        <div class="info-card__sub">NT$388 · 白天用於地圖、翻譯、聯絡朋友；晚上有 Wi-Fi 再上傳照片</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card__label">旅平險</div>
+        <div class="info-card__value">已購買</div>
+        <div class="info-card__sub">NT$672 · 截圖存於手機相簿</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 本次選點原則 -->
+  <section class="section">
+    <div class="section__eyebrow">本次選點原則</div>
+    <h2 class="section__title">這次不是補完首爾</h2>
+    <p style="font-size:.88rem;color:var(--ink-fade);line-height:1.75;margin-bottom:1.6rem;">每天只選一個核心區域。優先選語言依賴低、可以慢走、可以坐下來、能讓我重新感覺自己的地方。</p>
+
+    <div class="tier">
+      <div class="tier__label a">A 級｜這次的核心地圖</div>
+      <div class="tier__items">
+        <strong>教保文庫光化門</strong>：韓國最大書店，開門第一批；只找一本「現在的自己願意帶回家」的書<br>
+        <strong>MMCA 國立現代美術館首爾館</strong>：安靜、藝術、內在整理；只帶一個問題：「今天哪件作品讓我停下來超過 30 秒？」<br>
+        <strong>西村</strong>：老街、慢走、作家感，比北村更在地、更少觀光客<br>
+        <strong>聖水洞</strong>：品牌空間、城市更新、老工廠改造；觀察空間如何讓人想停留<br>
+        <strong>首爾林</strong>：身體恢復、慢走、不要用腦
+      </div>
+    </div>
+
+    <div class="tier" style="margin-top:.9rem">
+      <div class="tier__label b">B 級｜看體力與朋友安排</div>
+      <div class="tier__items">
+        仁寺洞、益善洞、漢江、奉恩寺 / COEX
+      </div>
+    </div>
+
+    <div class="tier" style="margin-top:.9rem">
+      <div class="tier__label c">C 級｜這次不必特別重刷</div>
+      <div class="tier__items">
+        景福宮本體（已去過）<br>
+        慶熙大學（除非朋友順路，或有情感理由）
+      </div>
+    </div>
+  </section>
+
+  <!-- 五日行程 -->
+  <section class="section">
+    <div class="section__eyebrow">五日行程</div>
+    <h2 class="section__title">每日安排</h2>
+
+    <!-- 五天總覽 -->
+    <div style="background:var(--paper-lt);border:1px solid var(--paper-dk);padding:1rem 1.2rem;margin-bottom:2rem;font-size:.85rem;">
+      <div style="font-family:var(--fell);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-fade);margin-bottom:.6rem;">Five-Day Overview</div>
+      <table style="width:100%;border-collapse:collapse;">
+        <tr style="border-bottom:1px dashed var(--paper-dk);">
+          <td style="padding:.35rem .5rem;font-family:var(--mono);font-size:.75rem;color:var(--gold);white-space:nowrap;">7/1（三）</td>
+          <td style="padding:.35rem .5rem;font-family:var(--serif);font-size:.85rem;font-weight:700;">抵達日</td>
+          <td style="padding:.35rem .5rem;font-size:.82rem;color:var(--ink-fade);">金浦機場、光化門住宿</td>
+        </tr>
+        <tr style="border-bottom:1px dashed var(--paper-dk);">
+          <td style="padding:.35rem .5rem;font-family:var(--mono);font-size:.75rem;color:var(--gold);white-space:nowrap;">7/2（四）</td>
+          <td style="padding:.35rem .5rem;font-family:var(--serif);font-size:.85rem;font-weight:700;">書局美術館日</td>
+          <td style="padding:.35rem .5rem;font-size:.82rem;color:var(--ink-fade);">教保文庫、MMCA、西村</td>
+        </tr>
+        <tr style="border-bottom:1px dashed var(--paper-dk);">
+          <td style="padding:.35rem .5rem;font-family:var(--mono);font-size:.75rem;color:var(--gold);white-space:nowrap;">7/3（五）</td>
+          <td style="padding:.35rem .5rem;font-family:var(--serif);font-size:.85rem;font-weight:700;">新首爾慢走日</td>
+          <td style="padding:.35rem .5rem;font-size:.82rem;color:var(--ink-fade);">聖水洞、首爾林</td>
+        </tr>
+        <tr style="border-bottom:1px dashed var(--paper-dk);">
+          <td style="padding:.35rem .5rem;font-family:var(--mono);font-size:.75rem;color:var(--gold);white-space:nowrap;">7/4（六）</td>
+          <td style="padding:.35rem .5rem;font-family:var(--serif);font-size:.85rem;font-weight:700;">朋友主場日</td>
+          <td style="padding:.35rem .5rem;font-size:.82rem;color:var(--ink-fade);">朋友決定</td>
+        </tr>
+        <tr>
+          <td style="padding:.35rem .5rem;font-family:var(--mono);font-size:.75rem;color:var(--gold);white-space:nowrap;">7/5（日）</td>
+          <td style="padding:.35rem .5rem;font-family:var(--serif);font-size:.85rem;font-weight:700;">回程日</td>
+          <td style="padding:.35rem .5rem;font-size:.82rem;color:var(--ink-fade);">金浦機場、台北松山</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Day I -->
+    <div class="day">
+      <div class="day__header">
+        <div class="day__numeral">I</div>
+        <div class="day__meta">
+          <div class="day__date">Day 1 · 7/1（三）</div>
+          <div class="day__name">台北 → 首爾｜抵達光化門</div>
+        </div>
+      </div>
+      <div class="mode-badge mode-arrive">抵達日</div>
+      <div class="alert"><strong>這天不安排景點。</strong>只要順利入境、抵達光化門住宿、吃一餐、洗澡、睡覺。</div>
+      <ul class="day__items">
+        <li class="day__item">
+          <span class="day__time">14:00</span>
+          <div class="day__content">
+            <div class="day__spot">台北松山機場 TSA 出發</div>
+            <div class="day__desc">TW668 · 德威航空 · 飛行約 2.5 小時</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">17:25</span>
+          <div class="day__content">
+            <div class="day__spot">首爾金浦機場 GMP 抵達</div>
+            <div class="day__desc">入境、領行李、開啟漫遊確認訊號</div>
+            <div class="day__note">金浦比仁川近，到光化門地鐵約 30 分鐘</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">18:00</span>
+          <div class="day__content">
+            <div class="day__spot">入境完成 · 地鐵前往光化門</div>
+            <div class="day__desc">5 號線或 9 號線，在光화문站下車</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">19:00</span>
+          <div class="day__content">
+            <div class="day__spot">抵達光化門住宿 · 辦理入住</div>
+            <div class="day__desc">確認隔天退房時間（11:00 前）</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">19:30</span>
+          <div class="day__content">
+            <div class="day__spot">簡單晚餐</div>
+            <div class="day__desc">住宿附近隨走隨進，不要查，吃飽就好</div>
+            <div class="day__note">今天唯一的任務：順利抵達、吃飯、睡覺</div>
+          </div>
+        </li>
+      </ul>
+      <p style="font-family:var(--fell);font-style:italic;font-size:.82rem;color:var(--palace);margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--paper-dk);">「我不需要一落地就開始證明自己很會旅行。」</p>
+    </div>
+
+    <!-- Day II -->
+    <div class="day">
+      <div class="day__header">
+        <div class="day__numeral">II</div>
+        <div class="day__meta">
+          <div class="day__date">Day 2 · 7/2（四）</div>
+          <div class="day__name">光化門書局美術館日</div>
+        </div>
+      </div>
+      <div class="mode-badge mode-solo">獨旅</div>
+      <div class="alert"><strong>行李友善設計：</strong>退房後先寄放行李，只帶小包出門。下午拿了行李再移動到朋友家。</div>
+      <ul class="day__items">
+        <li class="day__item">
+          <span class="day__time">09:00</span>
+          <div class="day__content">
+            <div class="day__spot">起床 · 整理行李</div>
+            <div class="day__desc">把大包整理好，準備退房寄放</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">10:30</span>
+          <div class="day__content">
+            <div class="day__spot">退房 · 寄放行李</div>
+            <div class="day__desc">請住宿幫忙寄放到下午 17:00，只帶小包出門</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">11:00</span>
+          <div class="day__content">
+            <div class="day__spot">교보문고 광화문 教保文庫光化門</div>
+            <div class="day__desc">韓國最大書店，地下樓是重點。至少待 1.5 小時</div>
+            <div class="day__note">書店任務：不採購知識，只找一本「現在的自己願意帶回家」的書</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">12:30</span>
+          <div class="day__content">
+            <div class="day__spot">光化門 / 西村一帶午餐</div>
+            <div class="day__desc">隨走隨進，不用查，水準都不錯</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">14:00</span>
+          <div class="day__content">
+            <div class="day__spot">국립현대미술관 서울 MMCA 首爾館</div>
+            <div class="day__desc">從教保文庫步行約 10 分鐘可達。安靜、藝術、內在整理</div>
+            <div class="day__note">美術館任務：不用看懂全部，只帶一個問題——「今天哪件作品讓我停下來超過 30 秒？」</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">16:00</span>
+          <div class="day__content">
+            <div class="day__spot">서촌 西村 · 咖啡館休息</div>
+            <div class="day__desc">老巷子、獨立小書店、靜靜的咖啡館。坐到想走再走</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">17:00</span>
+          <div class="day__content">
+            <div class="day__spot">回住宿拿行李</div>
+            <div class="day__desc">—</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">17:30</span>
+          <div class="day__content">
+            <div class="day__spot">前往朋友家 · 與朋友會合</div>
+            <div class="day__desc">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <!-- 行李寄放三語 -->
+      <div style="background:var(--paper-lt);border:1px solid var(--paper-dk);padding:1rem 1.2rem;margin-top:1rem;">
+        <div style="font-family:var(--fell);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-fade);margin-bottom:.7rem;">行李寄放說法 · Luggage Storage Phrase</div>
+        <p style="font-size:.85rem;line-height:1.7;margin-bottom:.5rem;"><strong style="color:var(--palace);">中</strong>　您好，我 7/2 早上退房後，想請問可以寄放行李到下午 5 點左右再回來拿嗎？謝謝。</p>
+        <p style="font-size:.85rem;line-height:1.7;margin-bottom:.5rem;"><strong style="color:var(--gold);">EN</strong>　Hello, I will check out on July 2. May I leave my luggage at the front desk until around 5 PM? Thank you.</p>
+        <p style="font-size:.85rem;font-family:var(--serif);line-height:1.7;"><strong style="color:var(--terra);">한</strong>　안녕하세요. 7월 2일 체크아웃 후 오후 5시쯤까지 짐을 맡길 수 있을까요? 감사합니다.</p>
+      </div>
+
+      <p style="font-family:var(--fell);font-style:italic;font-size:.82rem;color:var(--palace);margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--paper-dk);">「今天的重點不是完成很多地方，而是在書店與美術館之間，讓自己慢慢回到身體裡。」</p>
+    </div>
+
+    <!-- Day III -->
+    <div class="day">
+      <div class="day__header">
+        <div class="day__numeral">III</div>
+        <div class="day__meta">
+          <div class="day__date">Day 3 · 7/3（五）</div>
+          <div class="day__name">聖水洞＋首爾林｜新首爾慢走日</div>
+        </div>
+      </div>
+      <div class="mode-badge mode-solo">獨旅</div>
+      <div class="alert"><strong>觀察問題：</strong>這些空間為什麼讓人想停留？是商品、動線、氣味、燈光，還是某種被理解的感覺？</div>
+      <ul class="day__items">
+        <li class="day__item">
+          <span class="day__time">10:00</span>
+          <div class="day__content">
+            <div class="day__spot">出門前往聖水洞</div>
+            <div class="day__desc">—</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">10:30</span>
+          <div class="day__content">
+            <div class="day__spot">성수동 聖水洞慢走</div>
+            <div class="day__desc">老工廠改造的品牌空間聚集地，城市更新的縮影。不用計畫，走進喜歡的店坐著就好</div>
+            <div class="day__note">不追求打卡，只觀察空間如何讓人想停留</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">12:30</span>
+          <div class="day__content">
+            <div class="day__spot">聖水洞午餐</div>
+            <div class="day__desc">區內隨走隨進，水準都不錯</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">14:00</span>
+          <div class="day__content">
+            <div class="day__spot">서울숲 首爾林</div>
+            <div class="day__desc">從聖水洞步行約 15 分鐘可達。大型公園，散步 30–60 分鐘</div>
+            <div class="day__note">身體走路，腦子放空，讓自己慢慢回到身體裡</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">15:30</span>
+          <div class="day__content">
+            <div class="day__spot">找一間咖啡館坐下來</div>
+            <div class="day__desc">聖水洞或首爾林附近，喝咖啡、寫點什麼、什麼都不做</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">17:00</span>
+          <div class="day__content">
+            <div class="day__spot">回朋友家 · 與朋友晚餐</div>
+            <div class="day__desc">—</div>
+          </div>
+        </li>
+      </ul>
+      <p style="font-family:var(--fell);font-style:italic;font-size:.82rem;color:var(--palace);margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--paper-dk);">「我不是來打卡聖水洞，我是來觀察一座城市如何把舊空間轉化成新的生活場域。」</p>
+    </div>
+
+    <!-- Day IV -->
+    <div class="day">
+      <div class="day__header">
+        <div class="day__numeral">IV</div>
+        <div class="day__meta">
+          <div class="day__date">Day 4 · 7/4（六）</div>
+          <div class="day__name">朋友主場日</div>
+        </div>
+      </div>
+      <div class="mode-badge mode-friend">朋友帶路</div>
+      <ul class="day__items">
+        <li class="day__item">
+          <span class="day__time">上午</span>
+          <div class="day__content">
+            <div class="day__spot">慢慢起床 · 與朋友討論今日安排</div>
+            <div class="day__desc">把主導權交給朋友，今天不預設任何景點</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">白天</span>
+          <div class="day__content">
+            <div class="day__spot">朋友帶路</div>
+            <div class="day__desc">跟著朋友去他平常會去的地方</div>
+            <div class="day__note">今天的重點是朋友，不是行程完成率</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">晚上</span>
+          <div class="day__content">
+            <div class="day__spot">一起吃飯 · 聊天 · 散步</div>
+            <div class="day__desc">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <div style="background:var(--paper-lt);border:1px solid var(--paper-dk);padding:.9rem 1.1rem;margin-top:1rem;">
+        <div style="font-family:var(--fell);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-fade);margin-bottom:.5rem;">可以對朋友說的一句話</div>
+        <p style="font-family:var(--serif);font-size:.92rem;font-style:italic;color:var(--ink);">今天你帶我去你平常會去的地方就好，不用特別觀光。</p>
+      </div>
+
+      <p style="font-family:var(--fell);font-style:italic;font-size:.82rem;color:var(--palace);margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--paper-dk);">「有人帶路的首爾，才是真正的首爾。今天我不用掌控，只要出現。」</p>
+    </div>
+
+    <!-- Day V -->
+    <div class="day">
+      <div class="day__header">
+        <div class="day__numeral">V</div>
+        <div class="day__meta">
+          <div class="day__date">Day 5 · 7/5（日）</div>
+          <div class="day__name">早班機 · 賦歸</div>
+        </div>
+      </div>
+      <div class="mode-badge mode-arrive">回程日</div>
+      <div class="alert"><strong>提醒：</strong>不排景點。不買到失控。不最後一刻趕路。</div>
+      <ul class="day__items">
+        <li class="day__item">
+          <span class="day__time">07:30</span>
+          <div class="day__content">
+            <div class="day__spot">起床 · 整理行李</div>
+            <div class="day__desc">—</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">08:30</span>
+          <div class="day__content">
+            <div class="day__spot">與朋友道別 · 出發前往金浦機場</div>
+            <div class="day__desc">地鐵 5 號線或 9 號線，約 30 分鐘</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">09:20</span>
+          <div class="day__content">
+            <div class="day__spot">抵達金浦機場 GMP</div>
+            <div class="day__desc">辦理登機、安檢，預留足夠時間</div>
+          </div>
+        </li>
+        <li class="day__item">
+          <span class="day__time">11:20</span>
+          <div class="day__content">
+            <div class="day__spot">TW667 · 飛回台灣</div>
+            <div class="day__desc">13:00 抵達台北松山機場 TSA</div>
+            <div class="day__note">沒有塞滿，也可以是完整。</div>
+          </div>
+        </li>
+      </ul>
+      <p style="font-family:var(--fell);font-style:italic;font-size:.82rem;color:var(--palace);margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--paper-dk);">「沒有塞滿，也可以是完整。」</p>
+    </div>
+
+  </section>
+
+  <!-- 行李清單 -->
+  <section class="section">
+    <div class="section__eyebrow">出發前核對</div>
+    <h2 class="section__title">行李清單</h2>
+    <ul class="checklist" id="checklist">
+      <li class="check-item"><input type="checkbox" id="c1"><label class="check-label" for="c1">護照</label></li>
+      <li class="check-item"><input type="checkbox" id="c2"><label class="check-label" for="c2">TW668 / TW667 機票截圖</label></li>
+      <li class="check-item"><input type="checkbox" id="c3"><label class="check-label" for="c3">韓國 e-Arrival Card（電子入境卡）</label></li>
+      <li class="check-item"><input type="checkbox" id="c4"><label class="check-label" for="c4">光化門住宿地址與入住資訊</label></li>
+      <li class="check-item"><input type="checkbox" id="c5"><label class="check-label" for="c5">朋友家地址與聯絡方式</label></li>
+      <li class="check-item"><input type="checkbox" id="c6"><label class="check-label" for="c6">旅平險資料截圖</label></li>
+      <li class="check-item"><input type="checkbox" id="c7"><label class="check-label" for="c7">漫遊 5G 已開通確認</label></li>
+      <li class="check-item"><input type="checkbox" id="c8"><label class="check-label" for="c8">Naver Map 已儲存地點</label></li>
+      <li class="check-item"><input type="checkbox" id="c9"><label class="check-label" for="c9">Papago 已安裝</label></li>
+      <li class="check-item"><input type="checkbox" id="c10"><label class="check-label" for="c10">信用卡</label></li>
+      <li class="check-item"><input type="checkbox" id="c11"><label class="check-label" for="c11">少量韓幣現金</label></li>
+      <li class="check-item"><input type="checkbox" id="c12"><label class="check-label" for="c12">行動電源</label></li>
+      <li class="check-item"><input type="checkbox" id="c13"><label class="check-label" for="c13">手機充電器</label></li>
+      <li class="check-item"><input type="checkbox" id="c14"><label class="check-label" for="c14">充電線</label></li>
+      <li class="check-item"><input type="checkbox" id="c15"><label class="check-label" for="c15">韓國 220V 圓孔轉接頭</label></li>
+      <li class="check-item"><input type="checkbox" id="c16"><label class="check-label" for="c16">耳機</label></li>
+      <li class="check-item"><input type="checkbox" id="c17"><label class="check-label" for="c17">筆記本 + 筆</label></li>
+      <li class="check-item"><input type="checkbox" id="c18"><label class="check-label" for="c18">摺疊傘</label></li>
+      <li class="check-item"><input type="checkbox" id="c19"><label class="check-label" for="c19">防曬乳</label></li>
+      <li class="check-item"><input type="checkbox" id="c20"><label class="check-label" for="c20">薄外套或襯衫</label></li>
+      <li class="check-item"><input type="checkbox" id="c21"><label class="check-label" for="c21">常用藥</label></li>
+      <li class="check-item"><input type="checkbox" id="c22"><label class="check-label" for="c22">衛生用品</label></li>
+      <li class="check-item"><input type="checkbox" id="c23"><label class="check-label" for="c23">伴手禮給朋友</label></li>
+      <li class="check-item"><input type="checkbox" id="c24"><label class="check-label" for="c24">小托特包 / 摺疊購物袋</label></li>
+    </ul>
+  </section>
+
+  <!-- 預算 -->
+  <section class="section">
+    <div class="section__eyebrow">經費預算</div>
+    <h2 class="section__title">費用估算</h2>
+    <table class="budget-table" id="budget-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>說明</th>
+          <th>金額（NT$）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>首爾機票（來回）</td>
+          <td class="budget-note">德威航空 TW668 / TW667 · 6/29 已購</td>
+          <td><input class="budget-input" type="number" id="b1" value="16141" min="0"></td>
+        </tr>
+        <tr>
+          <td>漫遊 5G</td>
+          <td class="budget-note">6/29 已開通</td>
+          <td><input class="budget-input" type="number" id="b2" value="388" min="0"></td>
+        </tr>
+        <tr>
+          <td>旅平險</td>
+          <td class="budget-note">6/29 已購買</td>
+          <td><input class="budget-input" type="number" id="b3" value="672" min="0"></td>
+        </tr>
+        <tr>
+          <td>高鐵票</td>
+          <td class="budget-note">6/30 已購</td>
+          <td><input class="budget-input" type="number" id="b4" value="810" min="0"></td>
+        </tr>
+        <tr>
+          <td>7/1 光化門住宿</td>
+          <td class="budget-note">6/30 已訂</td>
+          <td><input class="budget-input" type="number" id="b5" value="1500" min="0"></td>
+        </tr>
+        <tr>
+          <td>7/2–7/4 住宿</td>
+          <td class="budget-note">朋友家 · 免費</td>
+          <td><input class="budget-input" type="number" id="b6" value="0" min="0"></td>
+        </tr>
+        <tr>
+          <td>市內交通</td>
+          <td class="budget-note">地鐵、公車、機場往返 ≈ ₩40,000</td>
+          <td><input class="budget-input" type="number" id="b7" value="840" min="0"></td>
+        </tr>
+        <tr>
+          <td>餐費</td>
+          <td class="budget-note">朋友聚餐與獨旅簡餐 ≈ ₩150,000</td>
+          <td><input class="budget-input" type="number" id="b8" value="3150" min="0"></td>
+        </tr>
+        <tr>
+          <td>書 / 咖啡 / MMCA</td>
+          <td class="budget-note">教保文庫、西村咖啡館 ≈ ₩80,000</td>
+          <td><input class="budget-input" type="number" id="b9" value="1680" min="0"></td>
+        </tr>
+        <tr>
+          <td>購物 / 伴手禮</td>
+          <td class="budget-note">給朋友 + 帶回台灣 ≈ ₩100,000</td>
+          <td><input class="budget-input" type="number" id="b10" value="2100" min="0"></td>
+        </tr>
+        <tr>
+          <td>備用金</td>
+          <td class="budget-note">突發狀況 ≈ ₩90,000</td>
+          <td><input class="budget-input" type="number" id="b11" value="1890" min="0"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="budget-total">
+          <td colspan="2">預估總計（目標 NT$30,000 以內）</td>
+          <td id="budget-total">NT$ 29,171</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- 快速換算 -->
+    <div style="margin-top:1.5rem;background:var(--paper-lt);border:1px solid var(--paper-dk);padding:1rem 1.2rem;">
+      <div style="font-family:var(--fell);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-fade);margin-bottom:.6rem;">快速換算 · ₩1 = NT$0.021</div>
+      <p style="font-size:.82rem;color:var(--ink-fade);margin-bottom:.5rem;">韓幣去掉 3 個 0，再乘以 21。</p>
+      <table style="width:100%;border-collapse:collapse;font-size:.82rem;">
+        <tr style="border-bottom:1px dashed var(--paper-dk);">
+          <td style="padding:.25rem .5rem;font-family:var(--mono);color:var(--gold);">₩10,000</td>
+          <td style="padding:.25rem .5rem;color:var(--ink-fade);">≈ NT$ 210</td>
+          <td style="padding:.25rem .5rem;font-family:var(--mono);color:var(--gold);">₩50,000</td>
+          <td style="padding:.25rem .5rem;color:var(--ink-fade);">≈ NT$ 1,050</td>
+        </tr>
+        <tr style="border-bottom:1px dashed var(--paper-dk);">
+          <td style="padding:.25rem .5rem;font-family:var(--mono);color:var(--gold);">₩20,000</td>
+          <td style="padding:.25rem .5rem;color:var(--ink-fade);">≈ NT$ 420</td>
+          <td style="padding:.25rem .5rem;font-family:var(--mono);color:var(--gold);">₩100,000</td>
+          <td style="padding:.25rem .5rem;color:var(--ink-fade);">≈ NT$ 2,100</td>
+        </tr>
+        <tr>
+          <td style="padding:.25rem .5rem;font-family:var(--mono);color:var(--gold);">₩30,000</td>
+          <td style="padding:.25rem .5rem;color:var(--ink-fade);">≈ NT$ 630</td>
+          <td style="padding:.25rem .5rem;"></td>
+          <td style="padding:.25rem .5rem;"></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 語言與地圖 -->
+  <section class="section">
+    <div class="section__eyebrow">語言與地圖</div>
+    <h2 class="section__title">地圖搜尋用韓文名稱</h2>
+    <p style="font-size:.82rem;color:var(--ink-fade);margin-bottom:1rem;">出發前把以下地點存進 Naver Map。</p>
+    <div class="kr-grid">
+      <div class="kr-card">
+        <div class="kr-card__zh">金浦機場</div>
+        <div class="kr-card__kr">김포공항</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">光化門</div>
+        <div class="kr-card__kr">광화문</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">教保文庫光化門</div>
+        <div class="kr-card__kr">교보문고 광화문</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">西村</div>
+        <div class="kr-card__kr">서촌</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">國立現代美術館首爾館</div>
+        <div class="kr-card__kr">국립현대미술관 서울</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">聖水洞</div>
+        <div class="kr-card__kr">성수동</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">首爾林</div>
+        <div class="kr-card__kr">서울숲</div>
+      </div>
+      <div class="kr-card">
+        <div class="kr-card__zh">朋友家</div>
+        <div class="kr-card__kr">（出發前填入）</div>
+      </div>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="tip__title">導航用 Naver Map</div>
+        <div class="tip__body">Google Maps 在韓國步行與大眾交通功能有限。Naver Map 或 KakaoMap 精準，支援英文介面。出發前把上面地點先存好。</div>
+      </div>
+      <div class="tip">
+        <div class="tip__title">看不懂時用 Papago</div>
+        <div class="tip__body">拍照翻譯功能直接對著韓文拍。旅行不是語言考試，看不懂的地方可以讓它存在。</div>
+      </div>
+      <div class="tip">
+        <div class="tip__title">天氣</div>
+        <div class="tip__body">7 月首爾 28–33°C，濕熱。午後偶有雷陣雨，帶傘備用。室內冷氣很強，帶薄外套。</div>
+      </div>
+      <div class="tip">
+        <div class="tip__title">漫遊 5G 使用原則</div>
+        <div class="tip__body">白天用於地圖、翻譯、聯絡朋友；晚上有 Wi-Fi 再上傳照片或大量使用網路。</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  首爾回訪 · 朋友、書店、美術館與慢走 · 2026 · 私人存檔
+</footer>
+
+<script>
+  // Persist question
+  const qField = document.getElementById('question-field');
+  const savedQ = localStorage.getItem('seoul-question');
+  if (savedQ) qField.textContent = savedQ;
+  qField.addEventListener('input', () => {
+    localStorage.setItem('seoul-question', qField.textContent);
+  });
+
+  // Budget auto-total + persist
+  const budgetIds = ['b1','b2','b3','b4','b5','b6','b7','b8','b9','b10','b11'];
+  function updateTotal() {
+    const total = budgetIds.reduce((sum, id) => {
+      const val = parseInt(document.getElementById(id).value) || 0;
+      return sum + val;
+    }, 0);
+    document.getElementById('budget-total').textContent =
+      'NT$ ' + total.toLocaleString();
+  }
+  budgetIds.forEach(id => {
+    const el = document.getElementById(id);
+    const saved = localStorage.getItem('seoul-budget-' + id);
+    if (saved !== null) el.value = saved;
+    el.addEventListener('input', () => {
+      localStorage.setItem('seoul-budget-' + id, el.value);
+      updateTotal();
+    });
+  });
+  updateTotal();
+
+  // Persist checkboxes
+  document.querySelectorAll('#checklist input[type="checkbox"]').forEach(cb => {
+    if (localStorage.getItem('seoul-' + cb.id) === 'true') {
+      cb.checked = true;
+      cb.closest('.check-item').classList.add('is-checked');
+    }
+    cb.addEventListener('change', () => {
+      localStorage.setItem('seoul-' + cb.id, cb.checked);
+      cb.closest('.check-item').classList.toggle('is-checked', cb.checked);
+    });
+  });
+</script>
+
+</body>
+</html>
