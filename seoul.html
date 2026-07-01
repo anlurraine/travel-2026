@@ -1251,81 +1251,117 @@
     </div>
   </section>
 
-  <!-- 實際支出紀錄 -->
+  <!-- 旅途記帳 -->
   <section class="section">
     <div class="section__eyebrow">旅途記帳</div>
     <h2 class="section__title">實際支出紀錄</h2>
 
-    <!-- 7/1 -->
+    <!-- ① 預算概覽 -->
+    <div style="background:var(--palace);color:#f5f0e6;padding:1rem 1.2rem;margin-bottom:1.5rem;">
+      <div style="font-size:.7rem;letter-spacing:.08em;font-weight:500;opacity:.7;margin-bottom:.5rem;">現地消費預算追蹤</div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;">
+        <div>
+          <div style="font-size:.75rem;opacity:.7;">預算</div>
+          <div style="font-family:var(--mono);font-size:1.1rem;">NT$ 9,660</div>
+        </div>
+        <div>
+          <div style="font-size:.75rem;opacity:.7;">已用</div>
+          <div style="font-family:var(--mono);font-size:1.1rem;color:#f5c19a;">NT$ 2,096</div>
+        </div>
+        <div>
+          <div style="font-size:.75rem;opacity:.7;">剩餘</div>
+          <div style="font-family:var(--mono);font-size:1.3rem;font-weight:600;">NT$ 7,564</div>
+        </div>
+      </div>
+      <div style="margin-top:.75rem;background:rgba(255,255,255,.15);border-radius:2px;height:6px;">
+        <div style="background:#f5c19a;border-radius:2px;height:6px;width:21.7%;"></div>
+      </div>
+      <div style="font-size:.7rem;opacity:.6;margin-top:.3rem;">7/1 已使用 21.7%</div>
+    </div>
+
+    <!-- ② 分類彙整 -->
     <div style="margin-bottom:1.5rem;">
-      <div style="font-family:var(--fell);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">Day 1 · 7/1（三）</div>
+      <div style="font-size:.72rem;letter-spacing:.05em;font-weight:500;color:var(--ink-fade);margin-bottom:.6rem;">分類彙整（截至 7/1）</div>
       <table class="budget-table">
         <thead>
           <tr>
-            <th>項目</th>
-            <th>說明</th>
-            <th>金額（NT$）</th>
+            <th>類別</th>
+            <th style="text-align:right;">金額（NT$）</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>朋友伴手禮</td>
-            <td class="budget-note">台灣出發前</td>
+            <td>🛍 購物 / 伴手禮</td>
             <td style="text-align:right;font-family:var(--mono);">715</td>
           </tr>
           <tr>
-            <td>機場咖啡</td>
-            <td class="budget-note">機場消費</td>
-            <td style="text-align:right;font-family:var(--mono);">220</td>
+            <td>🍽 餐飲</td>
+            <td style="text-align:right;font-family:var(--mono);">654</td>
           </tr>
           <tr>
-            <td>買書看</td>
-            <td class="budget-note">機場／旅途閱讀</td>
+            <td>📚 書 / 文化</td>
             <td style="text-align:right;font-family:var(--mono);">371</td>
           </tr>
           <tr>
-            <td>T-money 交通卡儲值</td>
-            <td class="budget-note">₩10,000 · 韓國交通</td>
+            <td>🚇 交通</td>
             <td style="text-align:right;font-family:var(--mono);">217</td>
           </tr>
           <tr>
-            <td>晚餐烤肉</td>
-            <td class="budget-note">₩20,000 · 首爾晚餐</td>
-            <td style="text-align:right;font-family:var(--mono);">434</td>
-          </tr>
-          <tr>
-            <td>7-11 超商</td>
-            <td class="budget-note">超商補給</td>
+            <td>🏪 超商 / 日用</td>
             <td style="text-align:right;font-family:var(--mono);">139</td>
           </tr>
         </tbody>
         <tfoot>
           <tr class="budget-total">
-            <td colspan="2">7/1 合計</td>
+            <td>合計</td>
             <td>NT$ 2,096</td>
           </tr>
         </tfoot>
       </table>
     </div>
 
-    <!-- 累計 -->
-    <div style="background:var(--paper-lt);border:1px solid var(--paper-dk);padding:1rem 1.2rem;margin-top:1rem;">
-      <div style="font-family:var(--fell);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-fade);margin-bottom:.6rem;">現地消費累計</div>
-      <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
-        <tr>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">現地消費預算</td>
-          <td style="padding:.3rem .5rem;text-align:right;font-family:var(--mono);color:var(--ink-fade);">NT$ 9,660</td>
-        </tr>
-        <tr>
-          <td style="padding:.3rem .5rem;color:var(--ink);">已使用（7/1）</td>
-          <td style="padding:.3rem .5rem;text-align:right;font-family:var(--mono);color:var(--terra);">NT$ 2,096</td>
-        </tr>
-        <tr style="border-top:1px dashed var(--paper-dk);">
-          <td style="padding:.3rem .5rem;font-weight:600;">剩餘預算</td>
-          <td style="padding:.3rem .5rem;text-align:right;font-family:var(--mono);font-weight:600;color:var(--gold);">NT$ 7,564</td>
-        </tr>
+    <!-- ③ 每日明細 -->
+    <div style="font-size:.72rem;letter-spacing:.05em;font-weight:500;color:var(--ink-fade);margin-bottom:.75rem;">每日明細</div>
+
+    <!-- 7/1 -->
+    <div style="margin-bottom:1.25rem;">
+      <div style="font-size:.8rem;font-weight:600;color:var(--gold);margin-bottom:.5rem;">Day 1 · 7/1（三） <span style="font-family:var(--mono);font-weight:400;color:var(--terra);">NT$ 2,096</span></div>
+      <table class="budget-table">
+        <tbody>
+          <tr><td>🛍 朋友伴手禮</td><td class="budget-note">台灣出發前</td><td style="text-align:right;font-family:var(--mono);">715</td></tr>
+          <tr><td>🍽 機場咖啡</td><td class="budget-note">機場</td><td style="text-align:right;font-family:var(--mono);">220</td></tr>
+          <tr><td>📚 買書看</td><td class="budget-note">機場 / 旅途閱讀</td><td style="text-align:right;font-family:var(--mono);">371</td></tr>
+          <tr><td>🚇 T-money 儲值</td><td class="budget-note">₩10,000</td><td style="text-align:right;font-family:var(--mono);">217</td></tr>
+          <tr><td>🍽 晚餐烤肉</td><td class="budget-note">₩20,000</td><td style="text-align:right;font-family:var(--mono);">434</td></tr>
+          <tr><td>🏪 7-11 超商</td><td class="budget-note">補給</td><td style="text-align:right;font-family:var(--mono);">139</td></tr>
+        </tbody>
       </table>
     </div>
+
+    <!-- 7/2 -->
+    <div style="margin-bottom:1.25rem;">
+      <div style="font-size:.8rem;font-weight:600;color:var(--gold);margin-bottom:.5rem;">Day 2 · 7/2（四） <span style="font-family:var(--mono);font-weight:400;color:var(--ink-fade);">待記帳</span></div>
+      <div style="border:1px dashed var(--paper-dk);padding:.6rem 1rem;font-size:.8rem;color:var(--ink-fade);text-align:center;">今日消費尚未輸入</div>
+    </div>
+
+    <!-- 7/3 -->
+    <div style="margin-bottom:1.25rem;">
+      <div style="font-size:.8rem;font-weight:600;color:var(--gold);margin-bottom:.5rem;">Day 3 · 7/3（五） <span style="font-family:var(--mono);font-weight:400;color:var(--ink-fade);">待記帳</span></div>
+      <div style="border:1px dashed var(--paper-dk);padding:.6rem 1rem;font-size:.8rem;color:var(--ink-fade);text-align:center;">今日消費尚未輸入</div>
+    </div>
+
+    <!-- 7/4 -->
+    <div style="margin-bottom:1.25rem;">
+      <div style="font-size:.8rem;font-weight:600;color:var(--gold);margin-bottom:.5rem;">Day 4 · 7/4（六） <span style="font-family:var(--mono);font-weight:400;color:var(--ink-fade);">待記帳</span></div>
+      <div style="border:1px dashed var(--paper-dk);padding:.6rem 1rem;font-size:.8rem;color:var(--ink-fade);text-align:center;">今日消費尚未輸入</div>
+    </div>
+
+    <!-- 7/5 -->
+    <div>
+      <div style="font-size:.8rem;font-weight:600;color:var(--gold);margin-bottom:.5rem;">Day 5 · 7/5（日）返台 <span style="font-family:var(--mono);font-weight:400;color:var(--ink-fade);">待記帳</span></div>
+      <div style="border:1px dashed var(--paper-dk);padding:.6rem 1rem;font-size:.8rem;color:var(--ink-fade);text-align:center;">今日消費尚未輸入</div>
+    </div>
+
   </section>
 
   <!-- 語言與地圖 -->
