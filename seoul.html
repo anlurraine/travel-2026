@@ -681,38 +681,6 @@
     </div>
   </section>
 
-  <!-- 本次選點原則 -->
-  <section class="section">
-    <div class="section__eyebrow">本次選點原則</div>
-    <h2 class="section__title">這次不是補完首爾</h2>
-    <p style="font-size:.88rem;color:var(--ink-fade);line-height:1.75;margin-bottom:1.6rem;">每天只選一個核心區域。優先選語言依賴低、可以慢走、可以坐下來、能讓我重新感覺自己的地方。</p>
-
-    <div class="tier">
-      <div class="tier__label a">A 級｜這次的核心地圖</div>
-      <div class="tier__items">
-        <strong>教保文庫光化門</strong>：韓國最大書店，開門第一批；只找一本「現在的自己願意帶回家」的書<br>
-        <strong>MMCA 國立現代美術館首爾館</strong>：安靜、藝術、內在整理；只帶一個問題：「今天哪件作品讓我停下來超過 30 秒？」<br>
-        <strong>西村</strong>：老街、慢走、作家感，比北村更在地、更少觀光客<br>
-        <strong>聖水洞</strong>：品牌空間、城市更新、老工廠改造；觀察空間如何讓人想停留<br>
-        <strong>首爾林</strong>：身體恢復、慢走、不要用腦
-      </div>
-    </div>
-
-    <div class="tier" style="margin-top:.9rem">
-      <div class="tier__label b">B 級｜看體力與朋友安排</div>
-      <div class="tier__items">
-        仁寺洞、益善洞、漢江、奉恩寺 / COEX
-      </div>
-    </div>
-
-    <div class="tier" style="margin-top:.9rem">
-      <div class="tier__label c">C 級｜這次不必特別重刷</div>
-      <div class="tier__items">
-        景福宮本體（已去過）<br>
-        慶熙大學（除非朋友順路，或有情感理由）
-      </div>
-    </div>
-  </section>
 
   <!-- 五日行程 -->
   <section class="section">
@@ -1087,128 +1055,57 @@
   </section>
 
 
-  <!-- 預算 -->
-  <section class="section">
-    <div class="section__eyebrow">經費預算</div>
-    <h2 class="section__title">費用估算</h2>
-    <table class="budget-table" id="budget-table">
-      <thead>
-        <tr>
-          <th>項目</th>
-          <th>說明</th>
-          <th>金額（NT$）</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>首爾機票（來回）</td>
-          <td class="budget-note">德威航空 TW668 / TW667 · 6/29 已購</td>
-          <td><input class="budget-input" type="number" id="b1" value="16141" min="0"></td>
-        </tr>
-        <tr>
-          <td>漫遊 5G</td>
-          <td class="budget-note">6/29 已開通</td>
-          <td><input class="budget-input" type="number" id="b2" value="388" min="0"></td>
-        </tr>
-        <tr>
-          <td>旅平險</td>
-          <td class="budget-note">6/29 已購買</td>
-          <td><input class="budget-input" type="number" id="b3" value="672" min="0"></td>
-        </tr>
-        <tr>
-          <td>高鐵票</td>
-          <td class="budget-note">6/30 已購</td>
-          <td><input class="budget-input" type="number" id="b4" value="810" min="0"></td>
-        </tr>
-        <tr>
-          <td>7/1 光化門住宿</td>
-          <td class="budget-note">6/30 已訂</td>
-          <td><input class="budget-input" type="number" id="b5" value="1500" min="0"></td>
-        </tr>
-        <tr>
-          <td>7/2–7/4 住宿</td>
-          <td class="budget-note">朋友家 · 免費</td>
-          <td><input class="budget-input" type="number" id="b6" value="0" min="0"></td>
-        </tr>
-        <tr>
-          <td>市內交通</td>
-          <td class="budget-note">地鐵、公車、機場往返 ≈ ₩40,000</td>
-          <td><input class="budget-input" type="number" id="b7" value="840" min="0"></td>
-        </tr>
-        <tr>
-          <td>餐費</td>
-          <td class="budget-note">朋友聚餐與獨旅簡餐 ≈ ₩150,000</td>
-          <td><input class="budget-input" type="number" id="b8" value="3150" min="0"></td>
-        </tr>
-        <tr>
-          <td>書 / 咖啡 / MMCA</td>
-          <td class="budget-note">教保文庫、西村咖啡館 ≈ ₩80,000</td>
-          <td><input class="budget-input" type="number" id="b9" value="1680" min="0"></td>
-        </tr>
-        <tr>
-          <td>購物 / 伴手禮</td>
-          <td class="budget-note">給朋友 + 帶回台灣 ≈ ₩100,000</td>
-          <td><input class="budget-input" type="number" id="b10" value="2100" min="0"></td>
-        </tr>
-        <tr>
-          <td>備用金</td>
-          <td class="budget-note">突發狀況 ≈ ₩90,000</td>
-          <td><input class="budget-input" type="number" id="b11" value="1890" min="0"></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr class="budget-total">
-          <td colspan="2">預估總計（目標 NT$30,000 以內）</td>
-          <td id="budget-total">NT$ 29,171</td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <!-- 快速換算 -->
-    <div style="margin-top:1.5rem;background:var(--paper-lt);border:1px solid var(--paper-dk);padding:1rem 1.2rem;">
-      <div style="font-size:.72rem;letter-spacing:.05em;font-weight:500;color:var(--ink-fade);margin-bottom:.75rem;">快速換算 · 2026/7 匯率 ₩1 ≈ NT$0.0205</div>
-
-      <!-- 口訣 -->
-      <div style="background:var(--paper-dk);padding:.6rem .8rem;margin-bottom:.75rem;font-size:.85rem;">
-        <strong>口訣：韓元 × 0.022</strong><br>
-        <span style="color:var(--ink-fade);font-size:.8rem;">₩10,000 × 0.022 = <strong>NT$220</strong>（貼近含手續費實際付款，Raine 驗證版）</span>
-      </div>
-
-      <!-- 換算表 -->
-      <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:.75rem;">
-        <tr style="border-bottom:1px dashed var(--paper-dk);">
-          <td style="padding:.3rem .5rem;font-family:var(--mono);color:var(--gold);">₩1,000</td>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">≈ NT$ 22</td>
-          <td style="padding:.3rem .5rem;font-family:var(--mono);color:var(--gold);">₩20,000</td>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">≈ NT$ 440</td>
-        </tr>
-        <tr style="border-bottom:1px dashed var(--paper-dk);">
-          <td style="padding:.3rem .5rem;font-family:var(--mono);color:var(--gold);">₩5,000</td>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">≈ NT$ 110</td>
-          <td style="padding:.3rem .5rem;font-family:var(--mono);color:var(--gold);">₩50,000</td>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">≈ NT$ 1,100</td>
-        </tr>
-        <tr>
-          <td style="padding:.3rem .5rem;font-family:var(--mono);color:var(--gold);">₩10,000</td>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">≈ NT$ 220</td>
-          <td style="padding:.3rem .5rem;font-family:var(--mono);color:var(--gold);">₩100,000</td>
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">≈ NT$ 2,200</td>
-        </tr>
-      </table>
-
-      <!-- 小提醒 -->
-      <div style="font-size:.78rem;color:var(--ink-fade);border-top:1px dashed var(--paper-dk);padding-top:.6rem;line-height:1.7;">
-        💳 <strong>刷卡</strong>匯率通常優於現金換匯，連鎖店、百貨建議刷卡<br>
-        💵 大額換錢建議去<strong>明洞換錢所</strong>，匯率比機場 / 銀行好很多<br>
-        ⚠️ 實際刷卡含手續費約 ₩10,000 ≈ NT$217（高於市場中價，正常）
-      </div>
-    </div>
-  </section>
 
   <!-- 旅途記帳 -->
   <section class="section">
     <div class="section__eyebrow">旅途記帳</div>
     <h2 class="section__title">實際支出紀錄</h2>
+
+    <!-- 整趟費用合計 -->
+    <table class="budget-table" style="margin-bottom:1.5rem;">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th style="text-align:right;">NT$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>✈ 機票（來回德威 TW668/667）</td>
+          <td style="text-align:right;font-family:var(--mono);">16,141</td>
+        </tr>
+        <tr>
+          <td>📡 漫遊 5G</td>
+          <td style="text-align:right;font-family:var(--mono);">388</td>
+        </tr>
+        <tr>
+          <td>🛡 旅平險</td>
+          <td style="text-align:right;font-family:var(--mono);">672</td>
+        </tr>
+        <tr>
+          <td>🚄 高鐵票（出發 + 回程）</td>
+          <td style="text-align:right;font-family:var(--mono);">810</td>
+        </tr>
+        <tr>
+          <td>🏨 光化門住宿（7/1）</td>
+          <td style="text-align:right;font-family:var(--mono);">1,500</td>
+        </tr>
+        <tr style="border-top:1px dashed var(--paper-dk);">
+          <td style="color:var(--ink-fade);font-size:.85em;">前置小計</td>
+          <td style="text-align:right;font-family:var(--mono);color:var(--ink-fade);">19,511</td>
+        </tr>
+        <tr style="border-top:2px solid var(--paper-dk);">
+          <td>🛍 現地消費（7/1–7/4）</td>
+          <td style="text-align:right;font-family:var(--mono);">12,481</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="budget-total">
+          <td>整趟合計</td>
+          <td>NT$ 31,992</td>
+        </tr>
+      </tfoot>
+    </table>
 
     <!-- ① 預算概覽 -->
     <div style="background:var(--palace);color:#f5f0e6;padding:1rem 1.2rem;margin-bottom:1.5rem;">
@@ -1230,7 +1127,7 @@
       <div style="margin-top:.75rem;background:rgba(255,255,255,.15);border-radius:2px;height:6px;">
         <div style="background:#e07070;border-radius:2px;height:6px;width:100%;"></div>
       </div>
-      <div style="font-size:.7rem;opacity:.6;margin-top:.3rem;">7/1–7/4 累計 NT$12,481（超出預算 NT$2,821；排除人參禮盒 NT$1,500 → 實際超出 NT$1,321）</div>
+      <div style="font-size:.7rem;opacity:.6;margin-top:.3rem;">7/1–7/4 累計 NT$12,481（含人參禮盒 NT$1,500 家人伴手禮）</div>
     </div>
 
     <!-- ② 分類彙整 -->
@@ -1353,7 +1250,7 @@
           <td style="padding:.3rem .5rem;text-align:right;font-family:var(--mono);">NT$650</td>
         </tr>
         <tr style="border-bottom:1px solid var(--paper-dk);">
-          <td style="padding:.3rem .5rem;color:var(--ink-fade);">伴手禮｜人參精（朋友代買）</td>
+          <td style="padding:.3rem .5rem;color:var(--ink-fade);">伴手禮｜人參精（家人）</td>
           <td style="padding:.3rem .5rem;text-align:right;font-family:var(--mono);">NT$1,500</td>
         </tr>
         <tr style="background:var(--paper-lt);">
@@ -1361,7 +1258,7 @@
           <td style="padding:.35rem .5rem;text-align:right;font-family:var(--mono);font-weight:600;">NT$3,804</td>
         </tr>
       </table>
-      <div style="font-size:.72rem;color:var(--ink-fade);margin-top:.4rem;padding:.3rem .5rem;">排除人參精 NT$1,500 → 日常支出 NT$2,304</div>
+      <div style="font-size:.72rem;color:var(--ink-fade);margin-top:.4rem;padding:.3rem .5rem;">人參精 NT$1,500 = 家人伴手禮，已含入合計</div>
     </div>
 
     <!-- 7/5 -->
@@ -1372,81 +1269,6 @@
 
   </section>
 
-  <!-- 語言與地圖 -->
-  <section class="section">
-    <div class="section__eyebrow">語言與地圖</div>
-    <h2 class="section__title">地圖搜尋用韓文名稱</h2>
-    <p style="font-size:.82rem;color:var(--ink-fade);margin-bottom:1rem;">出發前把以下地點存進 Naver Map。</p>
-    <div class="kr-grid">
-      <div class="kr-card">
-        <div class="kr-card__zh">金浦機場</div>
-        <div class="kr-card__kr">김포공항</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">光化門</div>
-        <div class="kr-card__kr">광화문</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">教保文庫光化門</div>
-        <div class="kr-card__kr">교보문고 광화문</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">西村</div>
-        <div class="kr-card__kr">서촌</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">國立現代美術館首爾館</div>
-        <div class="kr-card__kr">국립현대미술관 서울</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">聖水洞</div>
-        <div class="kr-card__kr">성수동</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">首爾林</div>
-        <div class="kr-card__kr">서울숲</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">朋友家</div>
-        <div class="kr-card__kr">（出發前填入）</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">成谷美術館</div>
-        <div class="kr-card__kr">성곡미술관</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">國立故宮博物館</div>
-        <div class="kr-card__kr">국립고궁박물관</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">首爾工藝博物館</div>
-        <div class="kr-card__kr">서울공예박물관</div>
-      </div>
-      <div class="kr-card">
-        <div class="kr-card__zh">首爾青年廳</div>
-        <div class="kr-card__kr">서울청년청</div>
-      </div>
-    </div>
-
-    <div class="tips-grid">
-      <div class="tip">
-        <div class="tip__title">導航用 Naver Map</div>
-        <div class="tip__body">Google Maps 在韓國步行與大眾交通功能有限。Naver Map 或 KakaoMap 精準，支援英文介面。出發前把上面地點先存好。</div>
-      </div>
-      <div class="tip">
-        <div class="tip__title">看不懂時用 Papago</div>
-        <div class="tip__body">拍照翻譯功能直接對著韓文拍。旅行不是語言考試，看不懂的地方可以讓它存在。</div>
-      </div>
-      <div class="tip">
-        <div class="tip__title">天氣</div>
-        <div class="tip__body">7 月首爾 28–33°C，濕熱。午後偶有雷陣雨，帶傘備用。室內冷氣很強，帶薄外套。</div>
-      </div>
-      <div class="tip">
-        <div class="tip__title">漫遊 5G 使用原則</div>
-        <div class="tip__body">白天用於地圖、翻譯、聯絡朋友；晚上有 Wi-Fi 再上傳照片或大量使用網路。</div>
-      </div>
-    </div>
-  </section>
 
 </main>
 
